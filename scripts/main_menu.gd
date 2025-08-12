@@ -32,7 +32,7 @@ func _on_host_pressed() -> void:
 	
 	add_player(multiplayer.get_unique_id())
 	
-	upnp_setup()
+	#upnp_setup()
 	#Commented out cuz it takes so long to load with this
 
 func remove_player(peer_id):
