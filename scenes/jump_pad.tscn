@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgppehcwlm7ie"]
+
+[ext_resource type="Script" path="res://scripts/jump_pad.gd" id="1_otfq2"]
+[ext_resource type="AudioStream" uid="uid://ds11r6qpupctv" path="res://audio/jump.mp3" id="2_ebhg0"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_a7ebs"]
+height = 1.0
+radius = 0.75
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_otfq2")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_a7ebs")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
+radius = 0.75
+height = 0.25
+sides = 16
+
+[node name="Launch_sound" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_ebhg0")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

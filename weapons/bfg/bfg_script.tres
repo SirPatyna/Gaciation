@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Weapons" load_steps=4 format=3 uid="uid://ckpw7d0temifw"]
+
+[ext_resource type="Script" path="res://scripts/weapons.gd" id="1_63k1y"]
+[ext_resource type="Material" uid="uid://b4w6ihtytx4wt" path="res://weapons/bfg/bfg.tres" id="1_oqq05"]
+[ext_resource type="ArrayMesh" uid="uid://d3qk2og642kvm" path="res://weapons/bfg/bfg.obj" id="2_qoq10"]
+
+[resource]
+script = ExtResource("1_63k1y")
+name = &"BIG FUCKING GUN"
+position = Vector3(0, -0.608, -0.978)
+rotation = Vector3(15, 0, 0)
+mesh = ExtResource("2_qoq10")
+material = ExtResource("1_oqq05")
+shadow = false
+damage = 3660.0
+max_ammo = 0
+projectile_type = 0
+projectile_speed = 0.0
+projectile_max_bounces = 0
+projectile_life_time = 0.0

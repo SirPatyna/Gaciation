@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Weapons" load_steps=4 format=3 uid="uid://dhu310q53ayo4"]
+
+[ext_resource type="Material" uid="uid://c3mmaio75fie8" path="res://weapons/mega/mega.tres" id="1_d26h7"]
+[ext_resource type="Script" path="res://scripts/weapons.gd" id="1_dqc8s"]
+[ext_resource type="ArrayMesh" uid="uid://cm3t3aihog0lh" path="res://weapons/mega/mega.obj" id="1_hrlv5"]
+
+[resource]
+script = ExtResource("1_dqc8s")
+name = &"Mega"
+position = Vector3(0, -1.02, -1.193)
+rotation = Vector3(0, 0, 0)
+mesh = ExtResource("1_hrlv5")
+material = ExtResource("1_d26h7")
+shadow = false
+damage = 2000
+max_ammo = 3
+projectile_speed = 20.0
+projectile_max_bounces = 0
+projectile_life_time = 0.0
+fire_rate = 1.5

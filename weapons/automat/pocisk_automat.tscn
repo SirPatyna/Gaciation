@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bc86j5bl83dtv"]
+
+[ext_resource type="Script" path="res://weapons/automat/pocisk_automat.gd" id="1_javjh"]
+[ext_resource type="Texture2D" uid="uid://bfug0371c6uhl" path="res://weapons/automat/pocisk_automat.png" id="2_yacwx"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_u5o4b"]
+radius = 0.215057
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2urra"]
+radius = 0.226714
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+collision_layer = 2
+slide_on_ceiling = false
+script = ExtResource("1_javjh")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_u5o4b")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(7.5, 0, 0, 0, 7.5, 0, 0, 0, 7.5, 0, 0, 0)
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_yacwx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_2urra")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

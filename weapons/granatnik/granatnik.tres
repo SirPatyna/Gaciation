@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bjs4e8cp251n4"]
+
+[ext_resource type="Texture2D" uid="uid://bjd8msetg6o8q" path="res://weapons/granatnik/granatnik.png" id="1_kyvwb"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_kyvwb")
+texture_filter = 0

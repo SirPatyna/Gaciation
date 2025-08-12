@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://deqga1h4a45l5"]
+
+[ext_resource type="Texture2D" uid="uid://bfxid51g1wny2" path="res://weapons/strzelba/strzelba.png" id="1_hvf3x"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_hvf3x")
+texture_filter = 0

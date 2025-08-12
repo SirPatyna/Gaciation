@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Weapons" load_steps=4 format=3 uid="uid://dnoxd6cu5aamj"]
+
+[ext_resource type="Script" path="res://scripts/weapons.gd" id="1_gkl2f"]
+[ext_resource type="Material" uid="uid://deqga1h4a45l5" path="res://weapons/strzelba/strzelba.tres" id="1_qu0lf"]
+[ext_resource type="ArrayMesh" uid="uid://bscjleiissxok" path="res://weapons/strzelba/strzelba.obj" id="2_x3siw"]
+
+[resource]
+script = ExtResource("1_gkl2f")
+name = &"Strzelba"
+position = Vector3(0, -0.989, -1.165)
+rotation = Vector3(0, 0, 0)
+mesh = ExtResource("2_x3siw")
+material = ExtResource("1_qu0lf")
+shadow = false
+damage = 500
+max_ammo = 6
+projectile_speed = 20.0
+projectile_max_bounces = 0
+projectile_life_time = 0.0
+fire_rate = 1.25

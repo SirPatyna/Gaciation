@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b4w6ihtytx4wt"]
+
+[ext_resource type="Texture2D" uid="uid://dj6atwjjnm1rv" path="res://weapons/bfg/bfg.png" id="1_svtap"]
+
+[resource]
+albedo_texture = ExtResource("1_svtap")
+texture_filter = 0

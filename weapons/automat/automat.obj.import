@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://byhxa8s7nkyns"
+path="res://.godot/imported/automat.obj-9d3ab7bce2876efcbb31151dc606eed3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/automat.obj-9d3ab7bce2876efcbb31151dc606eed3.mesh"]
+
+source_file="res://weapons/automat/automat.obj"
+dest_files=["res://.godot/imported/automat.obj-9d3ab7bce2876efcbb31151dc606eed3.mesh", "res://.godot/imported/automat.obj-9d3ab7bce2876efcbb31151dc606eed3.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

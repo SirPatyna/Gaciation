@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Weapons" load_steps=4 format=3 uid="uid://qouqias6hjai"]
+
+[ext_resource type="Material" uid="uid://bjs4e8cp251n4" path="res://weapons/granatnik/granatnik.tres" id="1_2uclh"]
+[ext_resource type="Script" path="res://scripts/weapons.gd" id="1_3p1eo"]
+[ext_resource type="ArrayMesh" uid="uid://cin2lfjmrta22" path="res://weapons/granatnik/granatnik.obj" id="2_su6vv"]
+
+[resource]
+script = ExtResource("1_3p1eo")
+name = &"Granatnik"
+position = Vector3(0, -0.997, -1.093)
+rotation = Vector3(0, 0, 0)
+mesh = ExtResource("2_su6vv")
+material = ExtResource("1_2uclh")
+shadow = false
+damage = 1000
+max_ammo = 4
+projectile_speed = 10.0
+projectile_max_bounces = 1
+projectile_life_time = 0.0
+fire_rate = 1.5

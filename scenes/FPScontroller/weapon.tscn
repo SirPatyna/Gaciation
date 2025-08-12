@@ -1,0 +1,77 @@
+[gd_scene load_steps=17 format=3 uid="uid://bf7vjlnfeveqt"]
+
+[ext_resource type="Material" uid="uid://du4efr0is2s0n" path="res://weapons/automat/automat.tres" id="1_s8jln"]
+[ext_resource type="Script" path="res://scenes/FPScontroller/weapon.gd" id="1_svt21"]
+[ext_resource type="Resource" uid="uid://bxjomxqkq1jqf" path="res://weapons/plazma/plazma_script.tres" id="2_k85fq"]
+[ext_resource type="ArrayMesh" uid="uid://byhxa8s7nkyns" path="res://weapons/automat/automat.obj" id="2_y11f7"]
+[ext_resource type="Material" uid="uid://bjs4e8cp251n4" path="res://weapons/granatnik/granatnik.tres" id="3_iv466"]
+[ext_resource type="ArrayMesh" uid="uid://cin2lfjmrta22" path="res://weapons/granatnik/granatnik.obj" id="4_pyct6"]
+[ext_resource type="Material" uid="uid://crbhbrqww1b57" path="res://weapons/mega/mega_color.tres" id="5_fhc13"]
+[ext_resource type="Material" uid="uid://c3mmaio75fie8" path="res://weapons/mega/mega.tres" id="6_fvhr8"]
+[ext_resource type="ArrayMesh" uid="uid://cm3t3aihog0lh" path="res://weapons/mega/mega.obj" id="7_62rho"]
+[ext_resource type="Material" uid="uid://cv7o71vpaw25b" path="res://weapons/mina/mina.tres" id="8_sov4e"]
+[ext_resource type="ArrayMesh" uid="uid://c6mrxnofi6eym" path="res://weapons/mina/mina.obj" id="9_fe1ob"]
+[ext_resource type="Material" uid="uid://hgfeql678x2d" path="res://weapons/plazma/plazma.tres" id="10_u4k5w"]
+[ext_resource type="ArrayMesh" uid="uid://c5h1tn38gpbpu" path="res://weapons/plazma/plazma.obj" id="11_3trft"]
+[ext_resource type="Material" uid="uid://deqga1h4a45l5" path="res://weapons/strzelba/strzelba.tres" id="12_u8n2f"]
+[ext_resource type="ArrayMesh" uid="uid://bscjleiissxok" path="res://weapons/strzelba/strzelba.obj" id="13_8u0jh"]
+[ext_resource type="ArrayMesh" uid="uid://d3qk2og642kvm" path="res://weapons/bfg/bfg.obj" id="16_4n6n2"]
+
+[node name="Weapon" type="Node3D"]
+script = ExtResource("1_svt21")
+WEAPON_TYPE = ExtResource("2_k85fq")
+damage = 10.0
+
+[node name="projectile_spawner" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.44673, -1.077)
+
+[node name="Automat" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0814, -1.084)
+visible = false
+layers = 2
+material_override = ExtResource("1_s8jln")
+mesh = ExtResource("2_y11f7")
+
+[node name="Granatnik" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.997467, -1.09317)
+visible = false
+layers = 2
+material_override = ExtResource("3_iv466")
+mesh = ExtResource("4_pyct6")
+skeleton = NodePath("../../..")
+
+[node name="Mega" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.01981, -1.19255)
+visible = false
+layers = 2
+material_override = ExtResource("5_fhc13")
+material_overlay = ExtResource("6_fvhr8")
+lod_bias = 0.001
+mesh = ExtResource("7_62rho")
+
+[node name="Mina" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0105, -1.25475)
+visible = false
+layers = 2
+material_override = ExtResource("8_sov4e")
+mesh = ExtResource("9_fe1ob")
+
+[node name="Strzelba" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.988591, -1.16479)
+visible = false
+layers = 2
+material_override = ExtResource("12_u8n2f")
+mesh = ExtResource("13_8u0jh")
+
+[node name="Current_weapon" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.918, -1.084)
+layers = 2
+material_override = ExtResource("10_u4k5w")
+mesh = ExtResource("11_3trft")
+
+[node name="Bfg" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.996793, -0.0800249, 0, 0.0800249, 0.996793, 0, -0.60769, -0.977511)
+visible = false
+mesh = ExtResource("16_4n6n2")

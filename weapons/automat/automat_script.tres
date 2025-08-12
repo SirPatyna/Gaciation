@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Weapons" load_steps=4 format=3 uid="uid://cbgseb72ulco5"]
+
+[ext_resource type="Script" path="res://scripts/weapons.gd" id="1_ipwie"]
+[ext_resource type="Material" uid="uid://du4efr0is2s0n" path="res://weapons/automat/automat.tres" id="1_ulrum"]
+[ext_resource type="ArrayMesh" uid="uid://byhxa8s7nkyns" path="res://weapons/automat/automat.obj" id="2_b3de5"]
+
+[resource]
+script = ExtResource("1_ipwie")
+name = &"Automat"
+position = Vector3(0, -1.081, -1.084)
+rotation = Vector3(0, 0, 0)
+mesh = ExtResource("2_b3de5")
+material = ExtResource("1_ulrum")
+shadow = false
+damage = 100
+max_ammo = 60
+projectile_speed = 20.0
+projectile_max_bounces = 0
+projectile_life_time = 0.0
+fire_rate = 8.0

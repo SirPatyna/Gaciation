@@ -1,0 +1,164 @@
+[gd_scene load_steps=27 format=3 uid="uid://ft8aai58w5xa"]
+
+[ext_resource type="Script" path="res://scripts/pickup.gd" id="1_1jpkk"]
+[ext_resource type="Material" uid="uid://du4efr0is2s0n" path="res://weapons/automat/automat.tres" id="2_bugp2"]
+[ext_resource type="ArrayMesh" uid="uid://byhxa8s7nkyns" path="res://weapons/automat/automat.obj" id="3_1mjlc"]
+[ext_resource type="Material" uid="uid://bjs4e8cp251n4" path="res://weapons/granatnik/granatnik.tres" id="4_8xpd6"]
+[ext_resource type="ArrayMesh" uid="uid://cin2lfjmrta22" path="res://weapons/granatnik/granatnik.obj" id="5_rmdl0"]
+[ext_resource type="Material" uid="uid://crbhbrqww1b57" path="res://weapons/mega/mega_color.tres" id="6_vmia5"]
+[ext_resource type="Material" uid="uid://c3mmaio75fie8" path="res://weapons/mega/mega.tres" id="7_rxp64"]
+[ext_resource type="ArrayMesh" uid="uid://cm3t3aihog0lh" path="res://weapons/mega/mega.obj" id="8_tg7jl"]
+[ext_resource type="Material" uid="uid://cv7o71vpaw25b" path="res://weapons/mina/mina.tres" id="9_bp3j7"]
+[ext_resource type="ArrayMesh" uid="uid://c6mrxnofi6eym" path="res://weapons/mina/mina.obj" id="10_2awgb"]
+[ext_resource type="Material" uid="uid://hgfeql678x2d" path="res://weapons/plazma/plazma.tres" id="11_dvwwp"]
+[ext_resource type="Shader" path="res://shaders/outline.gdshader" id="11_sl74q"]
+[ext_resource type="ArrayMesh" uid="uid://c5h1tn38gpbpu" path="res://weapons/plazma/plazma.obj" id="12_j8k2j"]
+[ext_resource type="Material" uid="uid://deqga1h4a45l5" path="res://weapons/strzelba/strzelba.tres" id="13_5q0ia"]
+[ext_resource type="ArrayMesh" uid="uid://bscjleiissxok" path="res://weapons/strzelba/strzelba.obj" id="14_j8yhc"]
+[ext_resource type="Material" uid="uid://b4w6ihtytx4wt" path="res://weapons/bfg/bfg.tres" id="16_vgh0l"]
+[ext_resource type="ArrayMesh" uid="uid://d3qk2og642kvm" path="res://weapons/bfg/bfg.obj" id="17_ucvvr"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mni6v"]
+radius = 0.83982
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_33hfl"]
+render_priority = 0
+next_pass = ExtResource("2_bugp2")
+shader = ExtResource("11_sl74q")
+shader_parameter/outline_color = Color(0, 1, 1, 1)
+shader_parameter/outline_width = 5.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l0m11"]
+render_priority = 0
+next_pass = ExtResource("4_8xpd6")
+shader = ExtResource("11_sl74q")
+shader_parameter/outline_color = Color(0, 1, 1, 1)
+shader_parameter/outline_width = 5.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qvy4n"]
+render_priority = 0
+next_pass = ExtResource("6_vmia5")
+shader = ExtResource("11_sl74q")
+shader_parameter/outline_color = Color(0, 1, 1, 1)
+shader_parameter/outline_width = 5.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q3svd"]
+render_priority = 0
+next_pass = ExtResource("9_bp3j7")
+shader = ExtResource("11_sl74q")
+shader_parameter/outline_color = Color(0, 1, 1, 1)
+shader_parameter/outline_width = 5.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5tg6b"]
+render_priority = 0
+next_pass = ExtResource("11_dvwwp")
+shader = ExtResource("11_sl74q")
+shader_parameter/outline_color = Color(0, 1, 1, 1)
+shader_parameter/outline_width = 5.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7iykr"]
+render_priority = 0
+next_pass = ExtResource("13_5q0ia")
+shader = ExtResource("11_sl74q")
+shader_parameter/outline_color = Color(0, 1, 1, 1)
+shader_parameter/outline_width = 5.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eltsb"]
+render_priority = 0
+next_pass = ExtResource("16_vgh0l")
+shader = ExtResource("11_sl74q")
+shader_parameter/outline_color = Color(0, 1, 1, 1)
+shader_parameter/outline_width = 5.0
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ihk20"]
+properties/0/path = NodePath(".:rotation")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:type")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath(".:respawning_timer")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+
+[node name="Pickup" type="Node3D"]
+script = ExtResource("1_1jpkk")
+
+[node name="Placeholder" type="CSGBox3D" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_mni6v")
+
+[node name="Rotating_bone" type="Node3D" parent="."]
+transform = Transform3D(0.885253, 0, 0.465108, 0, 1, 0, -0.465108, 0, 0.885253, 0, 0, 0)
+
+[node name="Automat" type="MeshInstance3D" parent="Rotating_bone"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+visible = false
+material_override = SubResource("ShaderMaterial_33hfl")
+mesh = ExtResource("3_1mjlc")
+skeleton = NodePath("../..")
+
+[node name="Granatnik" type="MeshInstance3D" parent="Rotating_bone"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+visible = false
+material_override = SubResource("ShaderMaterial_l0m11")
+mesh = ExtResource("5_rmdl0")
+skeleton = NodePath("../..")
+
+[node name="Mega" type="MeshInstance3D" parent="Rotating_bone"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+visible = false
+material_override = SubResource("ShaderMaterial_qvy4n")
+material_overlay = ExtResource("7_rxp64")
+mesh = ExtResource("8_tg7jl")
+skeleton = NodePath("../..")
+
+[node name="Mina" type="MeshInstance3D" parent="Rotating_bone"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+visible = false
+material_override = SubResource("ShaderMaterial_q3svd")
+mesh = ExtResource("10_2awgb")
+skeleton = NodePath("../..")
+
+[node name="Plazma" type="MeshInstance3D" parent="Rotating_bone"]
+unique_name_in_owner = true
+transform = Transform3D(-0.259099, 0, -0.965851, 0, 1, 0, 0.965851, 0, -0.259099, 0, -0.328381, 0)
+visible = false
+material_override = SubResource("ShaderMaterial_5tg6b")
+mesh = ExtResource("12_j8k2j")
+skeleton = NodePath("../..")
+
+[node name="Strzelba" type="MeshInstance3D" parent="Rotating_bone"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+visible = false
+material_override = SubResource("ShaderMaterial_7iykr")
+mesh = ExtResource("14_j8yhc")
+skeleton = NodePath("../..")
+
+[node name="BFG" type="MeshInstance3D" parent="Rotating_bone"]
+unique_name_in_owner = true
+transform = Transform3D(-0.891649, 0, -0.452728, 0, 1, 0, 0.452728, 0, -0.891649, 0, -0.154594, 0)
+visible = false
+material_override = SubResource("ShaderMaterial_eltsb")
+mesh = ExtResource("17_ucvvr")
+
+[node name="Health" type="CSGTorus3D" parent="Rotating_bone"]
+unique_name_in_owner = true
+visible = false
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_ihk20")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c3mmaio75fie8"]
+
+[ext_resource type="Texture2D" uid="uid://wxnmqon47pms" path="res://weapons/mega/mega.png" id="1_rus0p"]
+
+[resource]
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_rus0p")
+texture_filter = 0

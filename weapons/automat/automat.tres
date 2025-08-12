@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://du4efr0is2s0n"]
+
+[ext_resource type="Texture2D" uid="uid://cx6yu7ynf71p" path="res://weapons/automat/automat.png" id="1_vftid"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_vftid")
+texture_filter = 0

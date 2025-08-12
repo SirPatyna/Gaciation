@@ -1,0 +1,88 @@
+[gd_scene load_steps=2 format=3 uid="uid://ce14rgv2ig27p"]
+
+[ext_resource type="Script" path="res://scripts/options.gd" id="1_xte3m"]
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1592.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xte3m")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 320.0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Vol_label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "
+Volume"
+horizontal_alignment = 1
+
+[node name="Volume" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mute"
+
+[node name="Res_label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "
+Resolution"
+horizontal_alignment = 1
+
+[node name="Resolution" type="OptionButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+selected = 1
+item_count = 3
+popup/item_0/text = "Fullscreen"
+popup/item_0/id = 0
+popup/item_1/text = "1920x1080"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+
+[node name="Fov_Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "
+Field of view"
+horizontal_alignment = 1
+
+[node name="FOV" type="HScrollBar" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+min_value = 45.0
+max_value = 130.0
+value = 90.0
+rounded = true
+
+[node name="Autobhop" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+button_pressed = true
+text = "Auto bhop"
+
+[node name="Fahrenheit" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Use fahrenheit instead of celsius"
+
+[node name="Interlace" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Use interlace shader (60fps only)"
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Resolution" to="." method="_on_resolution_item_selected"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/FOV" to="." method="_on_fov_value_changed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/Autobhop" to="." method="_on_autobhop_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/Fahrenheit" to="." method="_on_fahrenheit_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/Interlace" to="." method="_on_interlace_toggled"]

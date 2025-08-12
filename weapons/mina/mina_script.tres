@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Weapons" load_steps=4 format=3 uid="uid://co1cgjxlvlwxi"]
+
+[ext_resource type="Script" path="res://scripts/weapons.gd" id="1_wivjo"]
+[ext_resource type="Material" uid="uid://cv7o71vpaw25b" path="res://weapons/mina/mina.tres" id="1_xe2jr"]
+[ext_resource type="ArrayMesh" uid="uid://c6mrxnofi6eym" path="res://weapons/mina/mina.obj" id="2_x2arp"]
+
+[resource]
+script = ExtResource("1_wivjo")
+name = &"Mina"
+position = Vector3(0, -1.01, -1.255)
+rotation = Vector3(15, 0, 0)
+mesh = ExtResource("2_x2arp")
+material = ExtResource("1_xe2jr")
+shadow = false
+damage = 1200
+max_ammo = 2
+projectile_speed = 10.0
+projectile_max_bounces = 0
+projectile_life_time = 0.0
+fire_rate = 1.25

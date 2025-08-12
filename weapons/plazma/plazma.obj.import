@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c5h1tn38gpbpu"
+path="res://.godot/imported/plazma.obj-d00b84d62432dd57a81175c4c2975343.mesh"
+
+[deps]
+
+files=["res://.godot/imported/plazma.obj-d00b84d62432dd57a81175c4c2975343.mesh"]
+
+source_file="res://weapons/plazma/plazma.obj"
+dest_files=["res://.godot/imported/plazma.obj-d00b84d62432dd57a81175c4c2975343.mesh", "res://.godot/imported/plazma.obj-d00b84d62432dd57a81175c4c2975343.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

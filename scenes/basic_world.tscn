@@ -1,0 +1,139 @@
+[gd_scene load_steps=9 format=3 uid="uid://c3mpiklbq0shb"]
+
+[ext_resource type="Texture2D" uid="uid://cncpbkw3a782v" path="res://textures/kenney-grey-checkerboard-cc0.png" id="1_1v8oh"]
+[ext_resource type="Material" uid="uid://cysj5feooxy4w" path="res://materials/gray_4friction.tres" id="2_k16hi"]
+[ext_resource type="PackedScene" uid="uid://ft8aai58w5xa" path="res://scenes/pickup.tscn" id="3_xyydw"]
+[ext_resource type="PackedScene" uid="uid://dgppehcwlm7ie" path="res://scenes/jump_pad.tscn" id="5_gkiap"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_f750l"]
+panorama = ExtResource("1_1v8oh")
+
+[sub_resource type="Sky" id="Sky_8kmsx"]
+sky_material = SubResource("PanoramaSkyMaterial_f750l")
+
+[sub_resource type="Environment" id="Environment_2jhjl"]
+background_mode = 2
+background_color = Color(0.627451, 0.627451, 0.627451, 1)
+sky = SubResource("Sky_8kmsx")
+
+[sub_resource type="PrismMesh" id="PrismMesh_oqnhs"]
+left_to_right = 0.0
+size = Vector3(6.806, 6.806, 8.384)
+
+[node name="BasicWorld" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2jhjl")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.793375, -0.453945, 0.405574, 0, 0.666259, 0.745721, -0.608734, -0.591636, 0.528593, -8.19661, 13.0388, 4.19156)
+layers = 1048575
+shadow_enabled = true
+
+[node name="Geometry" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(100, 1, 100)
+material = ExtResource("2_k16hi")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.41369, -18.7025)
+material_override = ExtResource("2_k16hi")
+use_collision = true
+size = Vector3(15, 15, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, -11.4081)
+material_override = ExtResource("2_k16hi")
+use_collision = true
+size = Vector3(15, 15, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5766, 2.88324, -15.0538)
+material_override = ExtResource("2_k16hi")
+use_collision = true
+size = Vector3(12.275, 6.76648, 8.38379)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5766, 2.88324, 14.6454)
+material_override = ExtResource("2_k16hi")
+use_collision = true
+size = Vector3(12.275, 6.806, 8.384)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1691, 5.94974, -7.3037)
+use_collision = true
+radius = 2.521
+height = 1.0
+sides = 16
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7973, 5.94974, -3.19101)
+use_collision = true
+radius = 2.521
+height = 1.0
+sides = 16
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.808, 5.94974, 1.3609)
+use_collision = true
+radius = 2.521
+height = 1.0
+sides = 16
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.398, 5.94974, 6.11245)
+use_collision = true
+radius = 2.521
+height = 1.0
+sides = 16
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.03094, 2.8844, 14.6425)
+material_override = ExtResource("2_k16hi")
+use_collision = true
+mesh = SubResource("PrismMesh_oqnhs")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Geometry"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 23.3262, 5, 11.7121)
+use_collision = true
+size = Vector3(5, 10, 5)
+
+[node name="Pickups" type="Node3D" parent="."]
+
+[node name="Pickup" parent="Pickups" instance=ExtResource("3_xyydw")]
+transform = Transform3D(0.634912, 0, 0.772584, 0, 1, 0, -0.772584, 0, 0.634912, 3.27353, 1.234, 20.3194)
+type = 0
+
+[node name="Pickup2" parent="Pickups" instance=ExtResource("3_xyydw")]
+transform = Transform3D(0.634912, 0, 0.772584, 0, 1, 0, -0.772584, 0, 0.634912, 5.96517, 1.234, 20.3194)
+type = 1
+
+[node name="Pickup3" parent="Pickups" instance=ExtResource("3_xyydw")]
+transform = Transform3D(0.634912, 0, 0.772584, 0, 1, 0, -0.772584, 0, 0.634912, 8.44139, 1.234, 20.3194)
+type = 2
+
+[node name="Pickup4" parent="Pickups" instance=ExtResource("3_xyydw")]
+transform = Transform3D(0.634912, 0, 0.772584, 0, 1, 0, -0.772584, 0, 0.634912, 10.8045, 1.234, 20.3194)
+type = 3
+
+[node name="Pickup5" parent="Pickups" instance=ExtResource("3_xyydw")]
+transform = Transform3D(0.634912, 0, 0.772584, 0, 1, 0, -0.772584, 0, 0.634912, 13.0416, 1.234, 20.3194)
+type = 4
+
+[node name="Pickup6" parent="Pickups" instance=ExtResource("3_xyydw")]
+transform = Transform3D(0.634912, 0, 0.772584, 0, 1, 0, -0.772584, 0, 0.634912, 15.1894, 1.234, 20.3194)
+type = 5
+
+[node name="Pickup7" parent="Pickups" instance=ExtResource("3_xyydw")]
+transform = Transform3D(0.634912, 0, 0.772584, 0, 1, 0, -0.772584, 0, 0.634912, 17.4207, 1.234, 20.3194)
+type = 6
+
+[node name="Pickup8" parent="Pickups" instance=ExtResource("3_xyydw")]
+transform = Transform3D(0.634912, 0, 0.772584, 0, 1, 0, -0.772584, 0, 0.634912, 19.5292, 1.234, 20.3194)
+type = 10
+
+[node name="Jump_pad" parent="." instance=ExtResource("5_gkiap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 14)

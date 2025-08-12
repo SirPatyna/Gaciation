@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Weapons" load_steps=4 format=3 uid="uid://bxjomxqkq1jqf"]
+
+[ext_resource type="Material" uid="uid://hgfeql678x2d" path="res://weapons/plazma/plazma.tres" id="1_ycfgx"]
+[ext_resource type="Script" path="res://scripts/weapons.gd" id="1_ytm5d"]
+[ext_resource type="ArrayMesh" uid="uid://c5h1tn38gpbpu" path="res://weapons/plazma/plazma.obj" id="2_5d8ia"]
+
+[resource]
+script = ExtResource("1_ytm5d")
+name = &"Plazma"
+position = Vector3(0, -0.918, -1.084)
+rotation = Vector3(0, 0, 0)
+mesh = ExtResource("2_5d8ia")
+material = ExtResource("1_ycfgx")
+shadow = false
+damage = 600
+max_ammo = 30
+projectile_speed = 10.0
+projectile_max_bounces = 3
+projectile_life_time = 0.0
+fire_rate = 4.0
